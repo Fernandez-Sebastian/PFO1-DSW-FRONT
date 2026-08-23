@@ -127,8 +127,9 @@ Preferí decirlo antes que simular un envío que no ocurre.
 **Herramienta utilizada:** Claude (Anthropic), interfaz web.
 **Plan:** Pro (pago).
 
-**Experiencia previa:** ⚠️ *completar en dos o tres líneas: hace cuánto la usás, para qué
-la venís usando en el trabajo o en la cursada, y qué tan cómodo te sentís con la herramienta.*
+**Experiencia previa:** La vengo usando hace menos de un año, principalmente en el trabajo
+para reescribir y mejorar respuestas de atención en Zendesk. La primera IA generativa que
+había usado fue Lovable.
 
 ### Cómo trabajé
 
@@ -167,14 +168,21 @@ El orden fue este:
   cumplir el requisito de CSS propio y aprovechar el ejercicio de escribirlo a mano.
 - **Pedí que no se usara ningún logo, escudo ni personaje de terceros** en la sección
   personal. La estética se resuelve con tipografía, color y formas propias en CSS.
-- ⚠️ *completar con lo que modifiques al revisar el sitio: textos que reescribas, colores o
-  tipografías que cambies, secciones que agregues o saques, ajustes de código.*
 
 ### Qué aprendí en el proceso
 
-⚠️ *completar: dos o tres líneas sobre qué entendiste del CSS escrito a mano que antes
-resolvías con framework —Grid, Flexbox, variables, `clamp()`— o sobre cómo conviene
-trabajar con una IA para que el resultado sea tuyo y no al revés.*
+Lo más útil fue entender qué resuelven por debajo los frameworks que uso a diario. La línea
+`grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr))` hace que las tarjetas se
+reacomoden solas según el ancho disponible: es, en una sola declaración, lo que en Bootstrap
+resuelvo repartiendo clases `col-md-4` por el HTML. Lo mismo con `clamp()` en los títulos,
+que reemplaza tener un tamaño de fuente distinto por cada breakpoint. Después de escribirlo
+a mano, las clases del framework dejaron de ser una caja negra.
+
+Sobre el trabajo con IA no descubrí el método, ya lo aplicaba: avanzar por etapas, revisando
+y corrigiendo a la par, en lugar de pedir todo de una. Lo que sí confirmé es que el resultado
+depende directamente de cuántas decisiones tome uno en el camino. Cada vez que corregí algo
+—un dato de la empresa, un formato que no me convencía, un texto que no sonaba a mí— el
+proyecto se pareció más a lo que yo quería y menos a una plantilla.
 
 ---
 
