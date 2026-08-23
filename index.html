@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portafolio de Sebastián Fernández, Software Developer en Bahía Blanca. Backend con PHP, SQL y JavaScript. PFO1 de Desarrollo de Sistemas Web (Front End).">
+  <meta name="author" content="Sebastián Fernández">
+  <meta name="theme-color" content="#11151C">
+
+  <!-- Open Graph: define cómo se ve la landing al compartirla en redes o WhatsApp -->
+  <meta property="og:title" content="Sebastián Fernández · Software Developer">
+  <meta property="og:description" content="Portafolio personal. Backend con PHP, SQL y JavaScript.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://pfo1-dsw-front.vercel.app/">
+  <meta property="og:image" content="https://pfo1-dsw-front.vercel.app/img/perfil.jpg">
+
+  <title>Sebastián Fernández · Software Developer</title>
+
+  <!-- Google Fonts: Space Grotesk para títulos, Inter para el cuerpo y JetBrains Mono
+       para etiquetas y datos técnicos. El preconnect adelanta la conexión al CDN. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%2311151C'/><text x='16' y='23' font-family='monospace' font-size='18' font-weight='700' fill='%23E03A48' text-anchor='middle'>SF</text></svg>">
+</head>
+
+<body>
+  <!-- Enlace de salto: permite a quien navega con teclado ir directo al contenido -->
+  <a class="skip-link" href="#contenido">Ir al contenido principal</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#inicio">
+        <span class="brand-mark" aria-hidden="true">SF</span>
+        <span class="brand-text">Sebastián Fernández</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Navegación principal">
+        <ul class="nav-list">
+          <li><a href="#perfil">Perfil</a></li>
+          <li><a href="#habilidades">Habilidades</a></li>
+          <li><a href="#proyectos">Proyectos</a></li>
+          <li><a href="#personal">Personal</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <a class="btn btn-ghost nav-github" href="https://github.com/Fernandez-Sebastian" target="_blank" rel="noopener noreferrer">
+        <svg class="icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/>
+        </svg>
+        <span>GitHub</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="contenido">
+
+    <!-- ===== Presentación ===== -->
+    <section class="hero" id="inicio">
+      <div class="wrap hero-grid">
+        <div class="hero-photo reveal">
+          <div class="frame">
+            <img src="img/perfil.jpg" width="640" height="640"
+                 alt="Retrato de Sebastián Fernández sobre un fondo de follaje verde">
+            <span class="frame-sweep" aria-hidden="true"></span>
+          </div>
+          <p class="photo-caption">Bahía Blanca, Buenos Aires</p>
+        </div>
+
+        <div class="hero-copy">
+          <p class="eyebrow reveal reveal-1">Software Developer</p>
+          <h1 class="reveal reveal-2">Sebastián<br>Fernández</h1>
+          <p class="hero-role reveal reveal-3">
+            Desarrollo <strong>Certronic</strong> en Laborem Certificación Laboral S.A.
+          </p>
+          <p class="hero-text reveal reveal-4" id="perfil">
+            Hace tres años que programo, con foco en backend: PHP, SQL y JavaScript en el día a día.
+            Entré a la empresa usando el sistema desde el otro lado del mostrador y hoy lo desarrollo,
+            así que sé bastante bien qué le duele a quien lo usa. Me gusta React y todo lo que trae
+            alrededor, y me interesa entender el proyecto completo: servidores, AWS, seguridad y costos.
+            Creo que se escriben mejores sistemas cuando sabés qué pasa después del deploy.
+          </p>
+
+          <ul class="hero-facts reveal reveal-5">
+            <li><span class="fact-num">4</span> años en Laborem</li>
+            <li><span class="fact-num">3</span> años programando</li>
+            <li><span class="fact-num">8k+</span> usuarios alcanzados</li>
+          </ul>
+
+          <div class="hero-actions reveal reveal-6">
+            <a class="btn btn-solid" href="https://github.com/Fernandez-Sebastian" target="_blank" rel="noopener noreferrer">Ver mi GitHub</a>
+            <a class="btn btn-ghost" href="#contacto">Escribirme</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Habilidades: Grid de tarjetas agrupadas por área ===== -->
+    <section class="section" id="habilidades">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">Habilidades</p>
+          <h2>Con qué trabajo</h2>
+          <p class="section-lead">
+            Agrupadas por área y sin porcentajes: prefiero decir dónde uso cada cosa
+            antes que inventar un número.
+          </p>
+        </header>
+
+        <!-- El contenedor usa Grid (columnas) y cada tarjeta usa Flexbox (contenido vertical) -->
+        <ul class="skills-grid">
+          <li class="card">
+            <h3 class="card-title">Backend y datos</h3>
+            <ul class="skill-list">
+              <li><span class="skill-name">PHP</span><span class="skill-note">Uso diario en producción</span></li>
+              <li><span class="skill-name">SQL</span><span class="skill-note">Consultas y modelado de datos</span></li>
+              <li><span class="skill-name">PDO</span><span class="skill-note">Acceso a datos con consultas preparadas</span></li>
+              <li><span class="skill-name">APIs REST</span><span class="skill-note">Integración entre back y front</span></li>
+            </ul>
+          </li>
+
+          <li class="card">
+            <h3 class="card-title">Front end</h3>
+            <ul class="skill-list">
+              <li><span class="skill-name">JavaScript</span><span class="skill-note">Lógica de interfaz y consumo de APIs</span></li>
+              <li><span class="skill-name">React</span><span class="skill-note">En camino, mi stack de interés</span></li>
+              <li><span class="skill-name">HTML5 y CSS3</span><span class="skill-note">Esta landing está hecha con CSS propio</span></li>
+            </ul>
+          </li>
+
+          <li class="card">
+            <h3 class="card-title">Herramientas y entorno</h3>
+            <ul class="skill-list">
+              <li><span class="skill-name">Git</span><span class="skill-note">Control de versiones y trabajo por ramas</span></li>
+              <li><span class="skill-name">Docker</span><span class="skill-note">Entornos locales multi-contenedor</span></li>
+              <li><span class="skill-name">Herramientas de IA</span><span class="skill-note">Uso cotidiano, con revisión propia</span></li>
+            </ul>
+          </li>
+
+          <li class="card">
+            <h3 class="card-title">Equipo y proceso</h3>
+            <ul class="skill-list">
+              <li><span class="skill-name">Scrum</span><span class="skill-note">Trabajo por sprints</span></li>
+              <li><span class="skill-name">Trello</span><span class="skill-note">Seguimiento de tareas</span></li>
+              <li><span class="skill-name">Testing y QA</span><span class="skill-note">Pruebas previas a la entrega</span></li>
+              <li><span class="skill-name">Inglés</span><span class="skill-note">Nivel intermedio</span></li>
+            </ul>
+          </li>
+
+          <li class="card">
+            <h3 class="card-title">En exploración</h3>
+            <ul class="skill-list">
+              <li><span class="skill-name">AWS e infraestructura</span><span class="skill-note">Servidores, seguridad y costos</span></li>
+              <li><span class="skill-name">C#</span><span class="skill-note">Usado durante la cursada</span></li>
+              <li><span class="skill-name">Python</span><span class="skill-note">Primeros pasos</span></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ===== Proyectos ===== -->
+    <section class="section section-alt" id="proyectos">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">Proyectos</p>
+          <h2>Cosas que salieron a producción</h2>
+        </header>
+
+        <div class="projects-grid">
+          <article class="card project">
+            <p class="project-state is-live">En línea</p>
+            <h3 class="card-title">HuFly Fishing</h3>
+            <p>
+              Sitio web desarrollado y publicado de punta a punta: maquetado, lógica del lado del
+              servidor y puesta en línea. Es mi proyecto de referencia para mostrar cómo trabajo solo,
+              desde la primera decisión hasta el dominio funcionando.
+            </p>
+            <ul class="tags">
+              <li>Desarrollo integral</li>
+              <li>Front y back</li>
+              <li>Publicación</li>
+            </ul>
+            <a class="project-link" href="https://www.huflyfishing.com.ar" target="_blank" rel="noopener noreferrer">
+              huflyfishing.com.ar <span aria-hidden="true">→</span>
+            </a>
+          </article>
+
+          <article class="card project">
+            <p class="project-state is-off">Servidor dado de baja</p>
+            <h3 class="card-title">Resultado Final</h3>
+            <p>
+              Prode del Mundial 2026, desarrollado en equipo. Superó los
+              <strong>8.000 usuarios activos</strong> durante el torneo. Desarrollé distintos módulos
+              de la aplicación, con front en React y Vite consumiendo una API propia en PHP y MySQL.
+              El servidor está apagado desde el cierre del torneo.
+            </p>
+            <ul class="tags">
+              <li>React + Vite</li>
+              <li>PHP</li>
+              <li>MySQL</li>
+              <li>API REST</li>
+            </ul>
+            <p class="project-link is-muted">resultadofinal.com.ar · fuera de línea</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Sección personal: fichas de datos, sin logos ni marcas de terceros ===== -->
+    <section class="section" id="personal">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">Ficha personal</p>
+          <h2>Quién soy cuando cierro el editor</h2>
+          <p class="section-lead">
+            Nada de esto aparece en un CV, pero explica bastante de por qué me dedico a esto.
+          </p>
+        </header>
+
+        <div class="personal-layout">
+          <ul class="stats-grid">
+            <li class="stat">
+              <p class="stat-label">Clase</p>
+              <p class="stat-value">Software Developer</p>
+              <p class="stat-note">Backend · PHP y SQL</p>
+            </li>
+            <li class="stat">
+              <p class="stat-label">Partida activa</p>
+              <p class="stat-value">World of Warcraft</p>
+              <p class="stat-note">Mi juego favorito, sin discusión</p>
+            </li>
+            <li class="stat">
+              <p class="stat-label">Primera vida</p>
+              <p class="stat-value">Mario Bros</p>
+              <p class="stat-note">Donde empezó todo</p>
+            </li>
+            <li class="stat">
+              <p class="stat-label">Saga favorita</p>
+              <p class="stat-value">Dragon Ball Z</p>
+              <p class="stat-note">Y Los Caballeros del Zodíaco</p>
+            </li>
+            <li class="stat">
+              <p class="stat-label">Equipo</p>
+              <p class="stat-value">River Plate</p>
+              <p class="stat-note">Monumental, presente</p>
+            </li>
+          </ul>
+
+          <figure class="personal-photo">
+            <div class="frame">
+              <img src="img/monumental.jpg" width="800" height="712" loading="lazy"
+                   alt="Sebastián Fernández en una tribuna del estadio Monumental antes de un partido">
+            </div>
+            <figcaption>Tribuna alta, antes de que se llene.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contacto ===== -->
+    <section class="section section-alt" id="contacto">
+      <div class="wrap">
+        <header class="section-head">
+          <p class="eyebrow">Contacto</p>
+          <h2>Hablemos</h2>
+        </header>
+
+        <div class="contact-layout">
+          <!-- Cada campo tiene su label asociado por el atributo for -->
+          <form class="contact-form" action="#" method="post">
+            <div class="field">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" autocomplete="name"
+                     placeholder="Cómo te llamás" required>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" autocomplete="email"
+                     placeholder="tu@correo.com" required>
+            </div>
+
+            <div class="field">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="5"
+                        placeholder="Contame en qué estás pensando" required></textarea>
+            </div>
+
+            <button class="btn btn-solid" type="submit">Enviar mensaje</button>
+            <p class="form-note">
+              El formulario es la interfaz de contacto de esta entrega y todavía no tiene
+              servidor detrás. Para que te responda hoy, escribime directo por mail o LinkedIn.
+            </p>
+          </form>
+
+          <aside class="contact-direct" aria-label="Datos de contacto directo">
+            <ul class="contact-list">
+              <li>
+                <span class="contact-label">Email</span>
+                <a href="mailto:fernandez90dgo@gmail.com">fernandez90dgo@gmail.com</a>
+              </li>
+              <li>
+                <span class="contact-label">GitHub</span>
+                <a href="https://github.com/Fernandez-Sebastian" target="_blank" rel="noopener noreferrer">Fernandez-Sebastian</a>
+              </li>
+              <li>
+                <span class="contact-label">LinkedIn</span>
+                <a href="https://www.linkedin.com/in/sebastian-fernandez-aa2b572a1/" target="_blank" rel="noopener noreferrer">Sebastián Fernández</a>
+              </li>
+              <li>
+                <span class="contact-label">Ubicación</span>
+                <span>Bahía Blanca, Buenos Aires, Argentina</span>
+              </li>
+            </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <p>© 2026 Sebastián Fernández · Bahía Blanca, Argentina</p>
+      <p class="footer-meta">
+        PFO1 · Desarrollo de Sistemas Web (Front End) · Tecnicatura en Desarrollo de Software
+      </p>
+      <a class="footer-github" href="https://github.com/Fernandez-Sebastian" target="_blank" rel="noopener noreferrer">
+        github.com/Fernandez-Sebastian
+      </a>
+    </div>
+  </footer>
+</body>
+</html>
