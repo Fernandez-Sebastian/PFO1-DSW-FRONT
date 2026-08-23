@@ -165,13 +165,8 @@ El orden fue este:
   nada real. Preferí una línea de contexto sobre dónde uso cada tecnología.
 - **Decidí no usar Bootstrap**, que es mi forma habitual de resolver el estilado, para
   cumplir el requisito de CSS propio y aprovechar el ejercicio de escribirlo a mano.
-- **Ajusté cómo se cuenta mi trayectoria**: de mis cuatro años en la empresa, los primeros
-  meses fueron como usuario del sistema y los últimos tres como desarrollador. Esa
-  distinción me parecía más honesta que decir "4 años de experiencia".
 - **Pedí que no se usara ningún logo, escudo ni personaje de terceros** en la sección
   personal. La estética se resuelve con tipografía, color y formas propias en CSS.
-- **Cambié la redacción de un proyecto**: donde decía "desarrollado con dos amigos", pedí
-  "desarrollado en equipo".
 - ⚠️ *completar con lo que modifiques al revisar el sitio: textos que reescribas, colores o
   tipografías que cambies, secciones que agregues o saques, ajustes de código.*
 
