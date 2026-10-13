@@ -3,13 +3,13 @@
 **Sebastián Fernández** · Desarrollo de Sistemas Web (Front End) · 2° A
 Tecnicatura en Desarrollo de Software · 2do cuatrimestre 2026
 
-Landing de una sola página construida con **HTML5 semántico y CSS3 propio**, sin frameworks
-ni librerías externas. Presenta mi perfil profesional, mis habilidades, dos proyectos
-publicados, una sección personal y una vía de contacto.
+Landing de una sola página construida con **HTML5 semántico, CSS3 propio y JavaScript**, sin frameworks
+ni librerías externas. Presenta mi perfil profesional, experiencia laboral, habilidades, tres proyectos, formación, intereses personales y contacto directo.
+Incluye un CV descargable en PDF, generado desde el contenido del HTML.
 
 - 🌐 **Sitio publicado:** https://pfo1-dsw-front.vercel.app
 - 👤 **Perfil de GitHub:** https://github.com/Fernandez-Sebastian
-- 💼 **LinkedIn:** https://www.linkedin.com/in/sebastian-fernandez-aa2b572a1/
+- 💼 **LinkedIn:** https://www.linkedin.com/in/sebasti%C3%A1n-fern%C3%A1ndez-aa2b572a1
 
 ---
 
@@ -18,10 +18,12 @@ publicados, una sección personal y una vía de contacto.
 | Sección | Qué contiene |
 |---|---|
 | Presentación | Nombre y apellido, rol actual, bio y datos de trayectoria |
+| Experiencia | Laborem desde julio de 2022; desarrollador desde marzo de 2023 |
+| Formación | Tecnicatura Superior en Desarrollo de Software, IFTS 29, desde febrero de 2025 |
 | Habilidades | Cinco tarjetas agrupadas por área: backend, front end, herramientas, equipo y exploración |
-| Proyectos | HuFly Fishing (en línea) y Resultado Final (prode del Mundial 2026, +8.000 usuarios) |
-| Personal | Fichas de datos con intereses: videojuegos, anime y fútbol |
-| Contacto | Formulario con `label` en todos los campos y datos de contacto directo |
+| Proyectos | HuFly Fishing, Barbería 1997 y Resultado Final (prode del Mundial 2026, +8.000 usuarios) |
+| Personal | Tarjetas de intereses personales y fotografía del Monumental |
+| Contacto | Enlaces directos a email y LinkedIn, GitHub y ubicación |
 
 ---
 
@@ -31,27 +33,34 @@ publicados, una sección personal y una vía de contacto.
 PFO1-DSW-FRONT/
 ├── index.html          # Estructura semántica completa
 ├── css/
-│   └── styles.css      # Estilos propios, organizados en 13 bloques comentados
+│   └── styles.css      # Estilos propios y adaptación responsive
 ├── img/
-│   ├── perfil.jpg      # Foto de perfil (recortada y optimizada)
-│   └── monumental.jpg  # Foto de la sección personal
+│   ├── perfil.png      # Foto de perfil actual, proporcionada por Sebastián
+│   ├── perfil.jpg      # Foto anterior, conservada como recurso
+│   └── monumental.jpg  # Foto anterior de la sección personal, conservada
+├── output/pdf/Sebastian-Fernandez-CV.pdf  # CV descargable
+├── scripts/generate_cv.py                # Generador desde index.html
 └── README.md
 ```
 
 ---
 
-## Requisitos técnicos de la consigna
+## Requisitos técnicos de la consigna original
+
+La versión actual está orientada a postulaciones laborales: reemplaza el formulario
+sin backend por contacto directo y mantiene la sección personal visual. No conserva todos los
+elementos de la entrega académica original.
 
 | Requisito | Dónde se cumple |
 |---|---|
-| HTML semántico (`header`, `nav`, `main`, `footer`) | `index.html`, más `section`, `article`, `aside`, `figure` |
+| HTML semántico (`header`, `nav`, `main`, `footer`) | `index.html`, más `section`, `article` y `aside` |
 | CSS propio | `css/styles.css`, escrito íntegramente para esta entrega |
 | Google Fonts | Space Grotesk, Inter y JetBrains Mono, vinculadas con `preconnect` |
 | Flexbox o Grid | Ambos, combinados (ver justificación abajo) |
 | Diseño responsive | Unidades relativas, `clamp()`, `auto-fit` y dos breakpoints |
 | Transición o animación | 3 animaciones `@keyframes` propias y transiciones en toda la interfaz |
-| Imágenes con `alt` | Las dos imágenes tienen texto alternativo descriptivo |
-| Formulario con `label` | Los tres campos tienen `label` asociado por `for` |
+| Imágenes con `alt` | La foto de perfil tiene texto alternativo descriptivo |
+| Formulario con `label` | Reemplazado por enlaces de contacto directo en la versión profesional |
 | Enlace visible a GitHub | En la cabecera, en la presentación, en contacto y en el pie |
 
 ---
@@ -111,12 +120,23 @@ decorativos, foco visible con `:focus-visible`, contraste alto entre texto y fon
 soporte de `prefers-reduced-motion` para desactivar las animaciones si el sistema
 operativo lo pide.
 
-### Sobre el formulario
+### Contacto y CV
 
-La consigna es de HTML y CSS, así que el formulario no tiene backend. Está construido con
-la semántica correcta y validación nativa del navegador (`required`, `type="email"`), y en
-la propia interfaz aclaro que para una respuesta hay que escribir al mail o a LinkedIn.
-Preferí decirlo antes que simular un envío que no ocurre.
+El contacto se realiza mediante email y LinkedIn. El sitio no recibe ni almacena mensajes.
+El botón **Descargar CV (PDF)** entrega un documento de una página con texto seleccionable
+y enlaces. Para regenerarlo después de cambiar el perfil, la experiencia, las habilidades,
+los proyectos o la formación en `index.html`:
+
+```bash
+python -m pip install reportlab
+python scripts/generate_cv.py
+```
+
+El generador utiliza el HTML como fuente de contenido. Revisar la paginación al agregar
+información: el PDF no se actualiza automáticamente durante el despliegue.
+Las capturas de los proyectos y el detalle de los módulos desarrollados pueden incorporarse
+cuando estén disponibles. No se agregaron tecnologías ni responsabilidades no confirmadas
+para Barbería 1997.
 
 ---
 
@@ -188,11 +208,12 @@ proyecto se pareció más a lo que yo quería y menos a una plantilla.
 
 ## Uso de imágenes
 
-Las dos fotografías son **propias**. No hay imágenes generadas por IA en este proyecto.
+Las fotografías guardadas en el repositorio son **propias**. No hay imágenes generadas por IA en este proyecto.
 
 | Archivo | Origen | Intervención |
 |---|---|---|
-| `img/perfil.jpg` | Foto personal | Recorte cuadrado centrado en el rostro, redimensionado a 640×640 px y compresión JPEG progresiva |
+| `img/perfil.png` | Foto personal proporcionada por Sebastián | Archivo original de 1080×1080 px, sin modificaciones; presentación circular mediante CSS |
+| `img/perfil.jpg` | Foto personal anterior, sin uso en la página | Recorte cuadrado centrado en el rostro, redimensionado a 640×640 px y compresión JPEG progresiva |
 | `img/monumental.jpg` | Foto personal en el estadio Monumental | Recorte apaisado, redimensionado a 800×712 px y compresión JPEG progresiva |
 
 El procesamiento fue de recorte y optimización de peso, con la biblioteca Pillow de Python.
@@ -215,3 +236,18 @@ cd PFO1-DSW-FRONT
 # Abrir index.html en el navegador, o levantar un servidor local:
 python3 -m http.server 5500
 ```
+
+## Actualización profesional
+
+Se utilizó Codex (OpenAI) para incorporar la foto proporcionada, ampliar el stack,
+reorganizar experiencia y formación, simplificar el contacto y generar el CV en PDF.
+Las fechas laborales, la institución y el proyecto Barbería 1997 fueron aportados por Sebastián.
+La declaración anterior documenta la creación de la entrega académica original.
+
+### Portfolio visual e interacción
+
+Se recuperó la sección personal original con tarjetas, foto del Monumental y efectos al
+pasar el cursor. La portada prioriza explorar los proyectos; el PDF es una descarga secundaria.
+`js/main.js` permite filtrar las habilidades por área con botones accesibles y estado anunciado.
+Sin JavaScript, todas las habilidades siguen visibles. La experiencia tiene un desplegable
+nativo para consultar las responsabilidades. Se mantiene la preferencia de movimiento reducido.
