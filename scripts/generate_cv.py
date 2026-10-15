@@ -35,6 +35,8 @@ from reportlab.lib import colors
 from reportlab.lib.enums import TA_LEFT
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.styles import ParagraphStyle
+from reportlab.graphics.barcode.qr import QrCodeWidget
+from reportlab.graphics.shapes import Drawing
 from reportlab.platypus import SimpleDocTemplate, Paragraph, KeepTogether, Image, Table, TableStyle
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -47,9 +49,9 @@ OUTPUT.parent.mkdir(parents=True, exist_ok=True)
 styles = {
     "name": ParagraphStyle("name", fontName="Helvetica-Bold", fontSize=24, leading=28, spaceAfter=5),
     "role": ParagraphStyle("role", fontName="Helvetica-Bold", fontSize=11, leading=15, textColor=colors.HexColor("#922331"), spaceAfter=7),
-    "section": ParagraphStyle("section", fontName="Helvetica-Bold", fontSize=11, leading=14, spaceBefore=9, spaceAfter=5, textColor=colors.HexColor("#922331")),
+    "section": ParagraphStyle("section", fontName="Helvetica-Bold", fontSize=11, leading=14, spaceBefore=7, spaceAfter=5, textColor=colors.HexColor("#922331")),
     "title": ParagraphStyle("title", fontName="Helvetica-Bold", fontSize=10, leading=13, spaceAfter=4),
-    "body": ParagraphStyle("body", fontName="Helvetica", fontSize=9, leading=11, spaceAfter=3, alignment=TA_LEFT),
+    "body": ParagraphStyle("body", fontName="Helvetica", fontSize=9, leading=11, spaceAfter=2, alignment=TA_LEFT),
     "contact": ParagraphStyle("contact", fontName="Helvetica", fontSize=8, leading=11, spaceAfter=3),
 }
 
@@ -72,11 +74,35 @@ for item in soup.findall(".//ul[@class='contact-list']/li"):
     else:
         story.append(para(text(item).removeprefix(label).strip(), "contact"))
 
-# La cabecera reserva una columna para la foto, sin superponerla con los datos.
+# El perfil aprovecha la columna izquierda mientras la foto y el QR ocupan la derecha.
+story.append(para("Perfil profesional", "section"))
+story.append(para(text(soup.find(".//*[@id='perfil']"))))
 profile_image = soup.find(".//div[@class='frame frame-profile']/img")
-photo = Image(str(ROOT / profile_image.attrib["src"]), width=88, height=88)
-photo.hAlign = "RIGHT"
-header = Table([[story, photo]], colWidths=[A4[0] - 80 - 12 - 100, 100])
+photo = Image(str(ROOT / profile_image.attrib["src"]), width=108, height=108)
+photo.hAlign = "CENTER"
+portfolio_url = "https://pfo1-dsw-front.vercel.app/"
+# QR vectorial con margen blanco para conservar la legibilidad al imprimir.
+qr = QrCodeWidget(portfolio_url, barLevel="M", barBorder=4)
+x0, y0, x1, y1 = qr.getBounds()
+qr_size = 72
+qr_image = Drawing(qr_size, qr_size, transform=[qr_size / (x1 - x0), 0, 0, qr_size / (y1 - y0), 0, 0])
+qr_image.add(qr)
+qr_image.hAlign = "CENTER"
+qr_caption = Paragraph(f'<link href="{portfolio_url}">Portfolio online</link>',
+                       ParagraphStyle("qr_caption", fontName="Helvetica-Bold", fontSize=9, leading=12, alignment=1,
+                                      textColor=colors.HexColor("#922331")))
+# Una única columna fija centra foto, QR y leyenda sobre el mismo eje.
+profile_block = Table([[photo], [qr_image], [qr_caption]], colWidths=[112])
+profile_block.setStyle(TableStyle([
+    ("ALIGN", (0, 0), (-1, -1), "CENTER"),
+    ("VALIGN", (0, 0), (-1, -1), "TOP"),
+    ("LEFTPADDING", (0, 0), (-1, -1), 0),
+    ("RIGHTPADDING", (0, 0), (-1, -1), 0),
+    ("TOPPADDING", (0, 0), (-1, -1), 0),
+    ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
+    ("BOTTOMPADDING", (0, 0), (0, 0), 4),
+]))
+header = Table([[story, profile_block]], colWidths=[A4[0] - 80 - 12 - 124, 124])
 header.setStyle(TableStyle([
     ("VALIGN", (0, 0), (-1, -1), "TOP"),
     ("LEFTPADDING", (0, 0), (-1, -1), 0),
@@ -86,9 +112,6 @@ header.setStyle(TableStyle([
     ("LEFTPADDING", (1, 0), (1, 0), 12),
 ]))
 story = [header]
-
-story.append(para("Perfil profesional", "section"))
-story.append(para(text(soup.find(".//*[@id='perfil']"))))
 
 story.append(para("Experiencia profesional", "section"))
 experience = soup.find(".//*[@id='experiencia']//article")

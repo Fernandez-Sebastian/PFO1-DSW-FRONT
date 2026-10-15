@@ -691,3 +691,13 @@ a { color: inherit; }
 .project:hover .project-number { color: var(--accent); transform: translateY(4px); }
 .personal-photo .frame { transition: border-color 0.3s; }
 .personal-photo:hover .frame { border-color: var(--accent); }
+
+/* Controles cómodos al tacto y enlaces largos adaptables a pantallas angostas. */
+.btn, .filter-chip, .experience-details summary { min-height: 44px; }
+.footer-github, .project-link { overflow-wrap: anywhere; }
+.personal-layout > *, .contact-layout > * { min-width: 0; }
+@media (max-width: 56rem) {
+  .nav-list a { display: inline-flex; align-items: center; min-height: 44px; }
+  .nav-list { column-gap: 1rem; row-gap: 0; }
+  .cv-link { display: inline-flex; align-items: center; min-height: 44px; }
+}
