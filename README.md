@@ -4,7 +4,7 @@
 Tecnicatura en Desarrollo de Software · 2do cuatrimestre 2026
 
 Landing de una sola página construida con **HTML5 semántico, CSS3 propio y JavaScript**, sin frameworks
-ni librerías externas. Presenta mi perfil profesional, experiencia laboral, habilidades, tres proyectos, formación, intereses personales y contacto directo.
+ni librerías externas. Presenta mi perfil profesional, experiencia laboral, habilidades, cuatro proyectos, formación, intereses personales y contacto directo.
 Incluye un CV descargable en PDF, generado desde el contenido del HTML.
 
 - 🌐 **Sitio publicado:** https://pfo1-dsw-front.vercel.app
@@ -21,7 +21,7 @@ Incluye un CV descargable en PDF, generado desde el contenido del HTML.
 | Experiencia | Laborem desde julio de 2022; desarrollador desde marzo de 2023 |
 | Formación | Tecnicatura Superior en Desarrollo de Software, IFTS 29, desde febrero de 2025 |
 | Habilidades | Cinco tarjetas agrupadas por área: backend, front end, herramientas, equipo y exploración |
-| Proyectos | HuFly Fishing, Barbería 1997 y Resultado Final (prode del Mundial 2026, +8.000 usuarios) |
+| Proyectos | PadelCBA (gestión de complejos de pádel), HuFly Fishing, Barbería 1997 y Resultado Final (prode del Mundial 2026, +8.000 usuarios) |
 | Personal | Tarjetas de intereses personales y fotografía del Monumental |
 | Contacto | Enlaces directos a email y LinkedIn, GitHub y ubicación |
 
